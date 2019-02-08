@@ -46,6 +46,8 @@ public class GalleryLocationManager : NSObject  {
             } else
             if self.locationSensingMethod == Constants.locationSensing.method.apple {
                 if self.lastLocation != nil {
+                    // for debugging only. When ignoring floors, we can use regular Lat/Long in Xcode
+                    // return LocationStore.sharedInstance.locationForCLLocation(location: self.lastLocation!, ignoreFloors: true)
                     return LocationStore.sharedInstance.locationForCLLocation(location: self.lastLocation!)
                 }
             }
