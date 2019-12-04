@@ -66,8 +66,10 @@ extension Beacon: Equatable {
 }
 
 extension Beacon: Hashable {
-    public var hashValue: Int {
-        return major.hashValue ^ minor.hashValue ^ UUID.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(major.hashValue)
+        hasher.combine(minor.hashValue)
+        hasher.combine(UUID.hashValue)
     }
 }
 

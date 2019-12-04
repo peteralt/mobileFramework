@@ -51,7 +51,8 @@ extension Location: Equatable {
 }
 
 extension Location: Hashable {
-    public var hashValue: Int {
-        return name.hashValue ^ floor.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name.hashValue)
+        hasher.combine(floor.hashValue)
     }
 }

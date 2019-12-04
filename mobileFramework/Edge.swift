@@ -40,7 +40,9 @@ extension Edge: Equatable {
 }
 
 extension Edge: Hashable {
-    public var hashValue: Int {
-        return nodeAName.hashValue ^ nodeBName.hashValue ^ weight.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(nodeAName.hashValue)
+        hasher.combine(nodeBName.hashValue)
+        hasher.combine(weight.hashValue)
     }
 }

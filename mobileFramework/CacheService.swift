@@ -212,7 +212,7 @@ public class CacheService {
         
         let folder = getCacheRootFolder(forEnvironment: environment)
         
-        var fileList = self.listFilesFromDirectory(path: folder.path)
+        let fileList = self.listFilesFromDirectory(path: folder.path)
         
         for i:Int in 0 ..< fileList.count
         {
