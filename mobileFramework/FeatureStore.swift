@@ -38,6 +38,10 @@ public class FeatureStore {
             localFileURL = url
         }
         
+        if let url = Bundle.main.url(forResource: filename, withExtension: ext, subdirectory: "Data") {
+            localFileURL = url
+        }
+        
         if localFileURL == nil {
             throw FeatureStoreError.fileNotFound
         }
